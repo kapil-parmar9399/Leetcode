@@ -1,29 +1,16 @@
+
 class Solution:
     def isGood(self, nums: List[int]) -> bool:
-        n = len(nums)
-        count = {}
+        n = max(nums)
 
-        for i in range(len(nums)):
-            if nums[i] in count:
-                count[nums[i]] += 1
-            else:
-                count[nums[i]] = 1
-
-        mx = max(count)
-        base = mx
-
-        if len(nums) == base + 1:
-            if count.get(base) != 2:
-                return False
-
-            if len(count) != base:
-                return False
-
-            for i in count:
-                if i != base and count[i] != 1:
-                    return False
-
-            return True
-
-        else:
+        if len(nums) != n + 1:
             return False
+
+        if nums.count(n) != 2:
+            return False
+
+        for i in range(1, n):
+            if nums.count(i) != 1:
+                return False
+
+        return True
