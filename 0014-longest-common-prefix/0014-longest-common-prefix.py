@@ -3,15 +3,11 @@ class Solution:
         prefix = ""
 
         for i in range(len(strs[0])):
+            ch=strs[0][i]
 
             for j in range(len(strs)):
-
-                if i >= len(strs[j]):
+                if i >=len(strs[j]) or strs[j][i]!=ch:
                     return prefix
 
-                if strs[j][i] != strs[0][i]:
-                    return prefix
-
-            prefix = prefix + strs[0][i]
-
-        return prefix
+            prefix += ch
+        return prefix       
