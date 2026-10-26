@@ -1,14 +1,14 @@
 class Solution:
     def merge(self, nums1, m, nums2, n):
-        final = []
+        list= []
 
         for i in range(m):
-            final.append(nums1[i])
+            list.append(nums1[i])
 
         for i in range(n):
-            final.append(nums2[i])
+            list.append(nums2[i])
 
-        final.sort()
+        list.sort()
 
         for i in range(m + n):
-            nums1[i] = final[i]
+            nums1[i] = list[i]
